@@ -18,11 +18,13 @@ import LocationSection from './components/LocationSection'
 import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 import MobileActionBar from './components/MobileActionBar'
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function App() {
   return (
     <div className="min-h-screen bg-cream-50 text-forest-900">
       <Header />
+      <SpeedInsights />
       <main>
         <Hero />
         <SocialAdsConversionSection />
@@ -44,5 +46,5 @@ export default function App() {
       <Footer />
       <MobileActionBar />
     </div>
-  )
+  );
 }
