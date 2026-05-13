@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream-50 text-forest-900 font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv02';
+  }
+  ::selection {
+    background: #dbb17f;
+    color: #1a2d29;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-all duration-300 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-50;
+  }
+  .btn-primary {
+    @apply btn bg-gold-300 text-forest-900 hover:bg-gold-400 shadow-soft;
+  }
+  .btn-secondary {
+    @apply btn bg-forest-800 text-cream-50 hover:bg-forest-700;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-forest-900 ring-1 ring-forest-800/20 hover:bg-forest-800 hover:text-cream-50;
+  }
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white hover:bg-[#1ebe57];
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-cream-100 px-3 py-1 text-xs font-medium text-forest-800 ring-1 ring-forest-800/10;
+  }
+  .chip-dark {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-forest-800/80 backdrop-blur px-3 py-1 text-xs font-medium text-cream-50 ring-1 ring-gold-300/30;
+  }
+  .section {
+    @apply relative py-20 sm:py-24 lg:py-28;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-gold-600;
+  }
+  .card {
+    @apply rounded-3xl bg-white p-6 ring-1 ring-forest-800/5 shadow-soft;
+  }
+  .card-dark {
+    @apply rounded-3xl bg-forest-800 p-6 text-cream-50 ring-1 ring-gold-300/10 shadow-soft;
+  }
+  .gradient-card {
+    @apply relative overflow-hidden rounded-3xl ring-1 ring-forest-800/10;
+  }
+  .input {
+    @apply w-full rounded-xl border-0 bg-cream-50 px-4 py-3 text-sm text-forest-900 ring-1 ring-forest-800/10 placeholder:text-forest-800/40 focus:outline-none focus:ring-2 focus:ring-gold-400;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-forest-800/70;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+            mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
